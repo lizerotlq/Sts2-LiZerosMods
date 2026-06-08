@@ -1,0 +1,17 @@
+{
+    "LIZEROS-COATTACK_POWER.description": "成功格挡伤害时，对攻击者造成伤害。",
+    "LIZEROS-COATTACK_POWER.smartDescription": "成功格挡伤害时，对攻击者造成{CoattackAmount:diff()}伤害{CoattackTime:diff()}次。",
+    "LIZEROS-COATTACK_POWER.title": "招架反击",
+
+    "LIZEROS-DEFEND_POWER.description": "受到攻击时，消耗招架格挡伤害。",
+    "LIZEROS-DEFEND_POWER.smartDescription": "受到攻击时，消耗招架格挡伤害。",
+    "LIZEROS-DEFEND_POWER.title": "招架",
+
+    "LIZEROS-FORWARD_SWORDSMANSHIP_POWER.description": "招架反击可以对所有敌人造成伤害，并且攻击次数增加 1 次。",
+    "LIZEROS-FORWARD_SWORDSMANSHIP_POWER.smartDescription": "招架反击可以对所有敌人造成伤害，并且攻击次数增加{Amount}次。",
+    "LIZEROS-FORWARD_SWORDSMANSHIP_POWER.title": "前锋剑术",
+
+    "LIZEROS-ENCOURAGE_POWER.description": "下回合开始时，额外抽1张卡，并获得1点[gold]能量[/gold]",
+    "LIZEROS-ENCOURAGE_POWER.smartDescription": "下回合开始时，额外抽{Amount}张卡，并获得{Amount:energyIcons()}。",
+    "LIZEROS-ENCOURAGE_POWER.title": "振奋"
+}

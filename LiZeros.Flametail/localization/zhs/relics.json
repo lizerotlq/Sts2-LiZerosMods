@@ -1,0 +1,9 @@
+{
+    "LIZEROS-FLAME_CORE_RELIC.description": "获得招架反击，在回合开始时获得{Energy:energyIcons()}。",
+    "LIZEROS-FLAME_CORE_RELIC.flavor": "",
+    "LIZEROS-FLAME_CORE_RELIC.title": "焰心",
+
+    "LIZEROS-PLACEHOLDER_RELIC.description": "初始没有效果，随着升级可以解锁力量buff，造成伤害概率斩杀。",
+    "LIZEROS-PLACEHOLDER_RELIC.flavor": "",
+    "LIZEROS-PLACEHOLDER_RELIC.title": "包括召唤物和队友("
+}

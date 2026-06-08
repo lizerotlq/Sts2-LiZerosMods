@@ -1,0 +1,22 @@
+{
+    "LIZEROS-STRIKE_FLAMETAIL.description": "",
+    "LIZEROS-STRIKE_FLAMETAIL.title": "打击",
+
+    "LIZEROS-DEFEND_FLAMETAIL.description": "",
+    "LIZEROS-DEFEND_FLAMETAIL.title": "招架",
+
+    "LIZEROS-STRIKE_TLIPOCA.description": "",
+    "LIZEROS-STRIKE_TLIPOCA.title": "打击",
+
+    "LIZEROS-DEFEND_TLIPOCA.description": "",
+    "LIZEROS-DEFEND_TLIPOCA.title": "防御",
+
+    "LIZEROS-FORWARD_SWORDSMANSHIP.description": "",
+    "LIZEROS-FORWARD_SWORDSMANSHIP.title": "前锋剑术",
+
+    "LIZEROS-RECAST_DEFENSE.description": "丢弃所有手牌。\n获取等额[gold]招架2[/gold]。\n[gold]振奋{Encourage:diff()}[/gold]",
+    "LIZEROS-RECAST_DEFENSE.title": "重铸防御",
+
+    "LIZEROS-CHANGE_STANCE.description": "消耗所有招架。\n获得{CalculatedBlock:diff()}格挡。",
+    "LIZEROS-CHANGE_STANCE.title": "转换架势"
+}

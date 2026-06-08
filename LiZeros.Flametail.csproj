@@ -1,0 +1,63 @@
+﻿<Project Sdk="Godot.NET.Sdk/4.5.1">
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net9.0</TargetFramework>
+		<EnableDynamicLoading>true</EnableDynamicLoading>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Platforms>AnyCPU;x64</Platforms>
+		<RootNamespace></RootNamespace>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	<ItemGroup>
+		<AdditionalFiles Include="Flametail/localization/**/*.json" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Remove="Flametail/**" />
+		<EmbeddedResource Remove="Flametail/**" />
+		<None Include="Flametail/**" />
+	</ItemGroup>
+	<ItemGroup>
+	  <AdditionalFiles Include="LiZeros.Flametail\localization\zhs\characters.json" />
+	  <AdditionalFiles Include="LiZeros.Flametail\localization\zhs\ancients.json" />
+	  <AdditionalFiles Include="LiZeros.Flametail\localization\zhs\cards.json" />
+	  <AdditionalFiles Include="LiZeros.Flametail\localization\zhs\powers.json" />
+	  <AdditionalFiles Include="LiZeros.Flametail\localization\zhs\relics.json" />
+	</ItemGroup>
+	<ItemGroup>
+	  <None Include="LiZeros.Flametail\Images\Cards\Big\card.png" />
+	  <None Include="LiZeros.Flametail\Images\Cards\Big\card.png.import" />
+	  <None Include="LiZeros.Flametail\Images\Cards\card.png" />
+	  <None Include="LiZeros.Flametail\Images\Cards\card.png.import" />
+	  <None Include="LiZeros.Flametail\Images\Ui\big_energy.png" />
+	  <None Include="LiZeros.Flametail\Images\Ui\big_energy.png.import" />
+	  <None Include="LiZeros.Flametail\Images\Ui\character_icon_flametail.png" />
+	  <None Include="LiZeros.Flametail\Images\Ui\character_icon_flametail.png.import" />
+	  <None Include="LiZeros.Flametail\Images\Ui\char_select_flametail.png" />
+	  <None Include="LiZeros.Flametail\Images\Ui\char_select_flametail.png.import" />
+	  <None Include="LiZeros.Flametail\Images\Ui\char_select_flametail_locked.png" />
+	  <None Include="LiZeros.Flametail\Images\Ui\char_select_flametail_locked.png.import" />
+	  <None Include="LiZeros.Flametail\Images\Ui\map_marker_flametail.png" />
+	  <None Include="LiZeros.Flametail\Images\Ui\map_marker_flametail.png.import" />
+	  <None Include="LiZeros.Flametail\Images\Ui\text_energy.png" />
+	  <None Include="LiZeros.Flametail\Images\Ui\text_energy.png.import" />
+	  <None Include="LiZeros.Flametail\localization\zhs\characters.json" />
+	  <None Include="LiZeros.Flametail\localization\zhs\ancients.json" />
+	  <None Include="LiZeros.Flametail\localization\zhs\powers.json" />
+	  <None Include="LiZeros.Flametail\localization\zhs\relics.json" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Alchyr.Sts2.BaseLib" Version="3.1.0" />
+		<PackageReference Include="Alchyr.Sts2.ModAnalyzers" Version="0.1.9" />
+	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="0Harmony">
+			<HintPath>F:\SteamLibrary\steamapps\common\Slay the Spire 2\data_sts2_windows_x86_64\0Harmony.dll</HintPath>
+		</Reference>
+		<Reference Include="GodotSharp">
+			<HintPath>F:\SteamLibrary\steamapps\common\Slay the Spire 2\data_sts2_windows_x86_64\GodotSharp.dll</HintPath>
+		</Reference>
+		<Reference Include="sts2">
+			<HintPath>F:\SteamLibrary\steamapps\common\Slay the Spire 2\data_sts2_windows_x86_64\sts2.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+</Project>
