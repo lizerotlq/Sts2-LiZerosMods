@@ -1,6 +1,7 @@
-using LiZeros.FlametailCode.Commands;
+using LiZeros.FlametailCode.Core.Commands;
 using LiZeros.FlametailCode.Expansions;
-using LiZeros.FlametailCode.Powers;
+using LiZeros.FlametailCode.Powers.Common;
+using LiZeros.FlametailCode.Powers.Flametail;
 using LiZeros.FlametailCode.Vars;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;

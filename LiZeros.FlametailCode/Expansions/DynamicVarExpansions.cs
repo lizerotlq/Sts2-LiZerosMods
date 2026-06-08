@@ -34,5 +34,10 @@ namespace LiZeros.FlametailCode.Expansions
         {
             return (EncourageVar)set[EncourageVar.NAME];
         }
+
+        public static SoulVar GetSoul(this DynamicVarSet set)
+        {
+            return (SoulVar)set[SoulVar.NAME];
+        }
     }
 }

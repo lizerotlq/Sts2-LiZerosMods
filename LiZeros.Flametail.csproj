@@ -60,4 +60,8 @@
 			<HintPath>F:\SteamLibrary\steamapps\common\Slay the Spire 2\data_sts2_windows_x86_64\sts2.dll</HintPath>
 		</Reference>
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="LiZeros.FlametailCode\Powers\Tlipoca\" />
+	  <Folder Include="LiZeros.FlametailCode\Core\Utils\" />
+	</ItemGroup>
 </Project>

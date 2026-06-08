@@ -1,5 +1,5 @@
 using BaseLib.Utils;
-using LiZeros.FlametailCode.Characters;
+using LiZeros.FlametailCode.Characters.Flametail;
 using MegaCrit.Sts2.Core.Entities.Cards;
 
 namespace LiZeros.FlametailCode.Cards.Flametail

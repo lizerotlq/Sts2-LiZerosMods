@@ -1,5 +1,5 @@
 using BaseLib.Utils;
-using LiZeros.FlametailCode.Powers;
+using LiZeros.FlametailCode.Powers.Flametail;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
