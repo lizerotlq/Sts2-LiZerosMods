@@ -8,6 +8,53 @@ namespace LiZeros.FlametailCode.Core.Hooks
 {
     public static class SoulHook
     {
+        public static async Task BeforeSoulGained(CombatState combatState, Creature creature, decimal amount, Creature? cardSource)
+        {
+            foreach (AbstractModel item in combatState.IterateHookListeners())
+            {
+                if (item is ISoulModel soulItem)
+                {
+                    await soulItem.BeforeSoulGained(combatState, creature, amount, cardSource);
+                    soulItem.InvokeExecutionFinished();
+                }
+            }
+        }
+
+        public static async Task AfterSoulGained(CombatState combatState, Creature creature, decimal amount, Creature? cardSource)
+        {
+            foreach (AbstractModel item in combatState.IterateHookListeners())
+            {
+                if (item is ISoulModel soulItem)
+                {
+                    await soulItem.AfterSoulGained(combatState, creature, amount, cardSource);
+                    soulItem.InvokeExecutionFinished();
+                }
+            }
+        }
+        public static async Task BeforeSoulLost(CombatState combatState, Creature creature, decimal amount, Creature? cardSource)
+        {
+            foreach (AbstractModel item in combatState.IterateHookListeners())
+            {
+                if (item is ISoulModel soulItem)
+                {
+                    await soulItem.BeforeSoulLost(combatState, creature, amount, cardSource);
+                    soulItem.InvokeExecutionFinished();
+                }
+            }
+        }
+
+        public static async Task AfterSoulLost(CombatState combatState, Creature creature, decimal amount, Creature? cardSource)
+        {
+            foreach (AbstractModel item in combatState.IterateHookListeners())
+            {
+                if (item is ISoulModel soulItem)
+                {
+                    await soulItem.AfterSoulLost(combatState, creature, amount, cardSource);
+                    soulItem.InvokeExecutionFinished();
+                }
+            }
+        }
+
         public static decimal ModifySoul(CombatState combatState, Creature target, decimal amount, CardModel? cardSource, CardPlay? cardPlay, out IEnumerable<ISoulModel> modifiers)
         {
             List<ISoulModel> list = [];

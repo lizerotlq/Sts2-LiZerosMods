@@ -39,5 +39,10 @@ namespace LiZeros.FlametailCode.Expansions
         {
             return (SoulVar)set[SoulVar.NAME];
         }
+
+        public static CalculatedSoulVar GetCalculatedSoul(this DynamicVarSet set)
+        {
+            return (CalculatedSoulVar)set[CalculatedSoulVar.NAME];
+        }
     }
 }

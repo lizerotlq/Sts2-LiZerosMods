@@ -1,3 +1,4 @@
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Models;
@@ -6,7 +7,13 @@ namespace LiZeros.FlametailCode.Models
 {
     public interface ISoulModel
     {
-        public decimal ModifySoulAdditive(Creature target, decimal soul, CardModel? cardSource, CardPlay? cardPlay);
-        public decimal ModifySoulMultiplicative(Creature target, decimal soul, CardModel? cardSource, CardPlay? cardPlay);
+        public Task BeforeSoulLost(CombatState combatState, Creature creature, decimal amount, Creature? cardSource);
+        public Task AfterSoulLost(CombatState combatState, Creature creature, decimal amount, Creature? cardSource);
+        public Task BeforeSoulGained(CombatState combatState, Creature creature, decimal amount, Creature? cardSource);
+        public Task AfterSoulGained(CombatState combatState, Creature creature, decimal amount, Creature? cardSource);
+        public decimal ModifySoulAdditive(Creature target, decimal amount, CardModel? cardSource, CardPlay? cardPlay);
+        public decimal ModifySoulMultiplicative(Creature target, decimal amount, CardModel? cardSource, CardPlay? cardPlay);
+
+        public void InvokeExecutionFinished();
     }
 }

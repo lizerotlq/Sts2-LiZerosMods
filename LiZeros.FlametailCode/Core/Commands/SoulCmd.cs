@@ -19,8 +19,11 @@ namespace LiZeros.FlametailCode.Core.Commands
             CombatState combatState = creature.CombatState!;
             decimal modifiedAmount = amount;
 
+            await SoulHook.BeforeSoulGained(combatState, creature, amount, cardPlay?.Card.Owner.Creature);
             modifiedAmount = SoulHook.ModifySoul(combatState, creature, modifiedAmount, cardPlay?.Card, cardPlay, out IEnumerable<ISoulModel> modifiers);
+            modifiedAmount = Math.Max(0, modifiedAmount);
             relic.GainSoulInternal(modifiedAmount);
+            await SoulHook.AfterSoulGained(combatState, creature, amount, cardPlay?.Card.Owner.Creature);
 
             if (!fast)
                 await Cmd.CustomScaledWait(0.1f, 0.25f);
@@ -39,8 +42,11 @@ namespace LiZeros.FlametailCode.Core.Commands
             CombatState combatState = creature.CombatState!;
             decimal modifiedAmount = amount;
 
+            await SoulHook.BeforeSoulLost(combatState, creature, amount, cardPlay?.Card.Owner.Creature);
             modifiedAmount = SoulHook.ModifySoul(combatState, creature, modifiedAmount, cardPlay?.Card, cardPlay, out IEnumerable<ISoulModel> modifiers);
+            modifiedAmount = Math.Max(0, modifiedAmount);
             relic.LoseSoulInternal(modifiedAmount);
+            await SoulHook.AfterSoulLost(combatState, creature, amount, cardPlay?.Card.Owner.Creature);
 
             if (!fast)
                 await Cmd.CustomScaledWait(0.1f, 0.25f);

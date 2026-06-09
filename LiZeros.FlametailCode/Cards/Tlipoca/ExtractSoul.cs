@@ -1,12 +1,13 @@
-using BaseLib.Utils;
 using LiZeros.FlametailCode.Core.Commands;
 using LiZeros.FlametailCode.Expansions;
 using LiZeros.FlametailCode.Vars;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.ValueProps;
 
 namespace LiZeros.FlametailCode.Cards.Tlipoca
 {
@@ -14,26 +15,27 @@ namespace LiZeros.FlametailCode.Cards.Tlipoca
     {
         private static decimal CalculateSoulAmount(CardModel card, Creature? creature)
         {
+            decimal baseValue = card.DynamicVars.CalculationBase.BaseValue;
             if (creature != null)
-                return 10 - Math.Min(card.DynamicVars.GetSoul().BaseValue, creature.CurrentHp);
+                return baseValue - Math.Min(baseValue, creature.CurrentHp);
             return 0;
         }
 
         protected override IEnumerable<DynamicVar> CanonicalVars =>
         [
-            new SoulVar(10),
             new CalculationBaseVar(10),
             new CalculationExtraVar(-1),
-            new CalculatedVar("CalculatedSoul").WithMultiplier(CalculateSoulAmount)
+            new CalculatedSoulVar().WithMultiplier(CalculateSoulAmount)
         ];
 
         protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             Creature? target = cardPlay.Target;
-            if (target != null && DynamicVars.TryGetValue("CalculatedSoul", out DynamicVar? calculatedSoul))
+            if (target != null)
             {
-                await CommonActions.CardAttack(this, target, calculatedSoul.BaseValue).Execute(choiceContext);
-                await SoulActions.CardCollectSoul(this, cardPlay);
+                IEnumerable<DamageResult> results = await CreatureCmd.Damage(choiceContext, target, DynamicVars.GetCalculatedSoul().BaseValue, ValueProp.Unblockable, Owner.Creature, this);
+                decimal soul = results.Sum(r => r.UnblockedDamage);
+                await SoulCmd.GainSoul(Owner.Creature, soul, cardPlay);
             }
         }
 

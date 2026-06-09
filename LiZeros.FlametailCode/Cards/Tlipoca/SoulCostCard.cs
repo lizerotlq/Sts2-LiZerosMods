@@ -1,6 +1,7 @@
 using LiZeros.FlametailCode.Core.Commands;
 using LiZeros.FlametailCode.Models;
 using LiZeros.FlametailCode.Relics.Tlipoca;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -69,12 +70,32 @@ namespace LiZeros.FlametailCode.Cards.Tlipoca
             return Task.CompletedTask;
         }
 
-        public virtual decimal ModifySoulAdditive(Creature target, decimal soul, CardModel? cardSource, CardPlay? cardPlay)
+        public virtual Task BeforeSoulGained(CombatState combatState, Creature creature, decimal amount, Creature? cardSource)
+        {
+            return Task.CompletedTask;
+        }
+
+        public virtual Task AfterSoulGained(CombatState combatState, Creature creature, decimal amount, Creature? cardSource)
+        {
+            return Task.CompletedTask;
+        }
+
+        public virtual Task BeforeSoulLost(CombatState combatState, Creature creature, decimal amount, Creature? cardSource)
+        {
+            return Task.CompletedTask;
+        }
+
+        public virtual Task AfterSoulLost(CombatState combatState, Creature creature, decimal amount, Creature? cardSource)
+        {
+            return Task.CompletedTask;
+        }
+
+        public virtual decimal ModifySoulAdditive(Creature target, decimal amount, CardModel? cardSource, CardPlay? cardPlay)
         {
             return 0;
         }
 
-        public virtual decimal ModifySoulMultiplicative(Creature target, decimal soul, CardModel? cardSource, CardPlay? cardPlay)
+        public virtual decimal ModifySoulMultiplicative(Creature target, decimal amount, CardModel? cardSource, CardPlay? cardPlay)
         {
             return 1;
         }

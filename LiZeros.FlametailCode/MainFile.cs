@@ -19,6 +19,5 @@ namespace LiZeros.Flametail.FlametailCode
             Harmony harmony = new Harmony(MOD_ID);
             harmony.PatchAll();
         }
-        // 全力防御（2） 丢弃所有卡牌每张卡牌获取招架3，下回合获取两点能量
     }
 }
