@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Models;
 using System.Diagnostics.CodeAnalysis;
 
@@ -13,7 +14,13 @@ namespace LiZeros.FlametailCode.Cards.Tlipoca
     public abstract class SoulCostCard(int baseCost, CardType type, CardRarity rarity, TargetType target, bool showInCardLibrary = true, bool autoAdd = true)
         : BasicTlipocaCard(baseCost, type, rarity, target, showInCardLibrary, autoAdd), ISoulModel
     {
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            Core.HoverTips.HoverTipFactory.Static(Core.HoverTips.StaticHoverTip.Soul)
+        ];
+
         protected override bool IsPlayable => VerifyPlayable(out _);
+        protected override bool ShouldGlowGoldInternal => VerifyPlayable(out bool soulUsable) && soulUsable;
 
         protected virtual decimal SoulCost { get; }
         protected virtual bool RequiredSoul { get; }

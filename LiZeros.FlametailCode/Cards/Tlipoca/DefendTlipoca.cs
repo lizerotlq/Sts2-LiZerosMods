@@ -8,8 +8,6 @@ namespace LiZeros.FlametailCode.Cards.Tlipoca
 {
     public class DefendTlipoca() : BasicTlipocaCard(1, CardType.Skill, CardRarity.Basic, TargetType.Self)
     {
-        public override bool GainsBlock => true;
-
         protected override HashSet<CardTag> CanonicalTags => [CardTag.Defend];
 
         protected override IEnumerable<DynamicVar> CanonicalVars =>

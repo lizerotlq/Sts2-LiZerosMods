@@ -3,6 +3,7 @@ using LiZeros.FlametailCode.Expansions;
 using LiZeros.FlametailCode.Vars;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.ValueProps;
 
@@ -10,6 +11,11 @@ namespace LiZeros.FlametailCode.Cards.Tlipoca
 {
     public class SoulStrike() : SoulCostCard(2, CardType.Attack, CardRarity.Common, TargetType.AnyEnemy)
     {
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            Core.HoverTips.HoverTipFactory.Static(Core.HoverTips.StaticHoverTip.Soul)
+        ];
+
         protected override IEnumerable<DynamicVar> CanonicalVars =>
         [
             new DamageVar(9, ValueProp.Move),

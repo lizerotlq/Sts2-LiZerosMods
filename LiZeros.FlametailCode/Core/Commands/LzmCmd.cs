@@ -8,7 +8,7 @@ using MegaCrit.Sts2.Core.Models;
 
 namespace LiZeros.FlametailCode.Core.Commands
 {
-    public static class LzpCmd
+    public static class LzmCmd
     {
         public static Task Encourage(CardModel cardSource, Creature target, CardPlay? cardPlay, bool silent = false)
         {

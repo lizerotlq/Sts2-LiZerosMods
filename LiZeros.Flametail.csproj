@@ -17,6 +17,7 @@
 		<None Include="Flametail/**" />
 	</ItemGroup>
 	<ItemGroup>
+	  <AdditionalFiles Include="LiZeros.Flametail\localization\zhs\static_hover_tips.json" />
 	  <AdditionalFiles Include="LiZeros.Flametail\localization\zhs\characters.json" />
 	  <AdditionalFiles Include="LiZeros.Flametail\localization\zhs\ancients.json" />
 	  <AdditionalFiles Include="LiZeros.Flametail\localization\zhs\cards.json" />

@@ -1,8 +1,8 @@
 {
-    "LIZEROS-STRIKE_FLAMETAIL.description": "",
+    "LIZEROS-STRIKE_FLAMETAIL.description": "造成{Damage:diff()}点伤害。",
     "LIZEROS-STRIKE_FLAMETAIL.title": "打击",
 
-    "LIZEROS-DEFEND_FLAMETAIL.description": "",
+    "LIZEROS-DEFEND_FLAMETAIL.description": "获得{Block:diff()}点[gold]招架[/gold]。",
     "LIZEROS-DEFEND_FLAMETAIL.title": "招架",
 
     "LIZEROS-FORWARD_SWORDSMANSHIP.description": "",
@@ -16,18 +16,18 @@
 
 
 
-    "LIZEROS-STRIKE_TLIPOCA.description": "",
+    "LIZEROS-STRIKE_TLIPOCA.description": "造成{Damage:diff()}点伤害。",
     "LIZEROS-STRIKE_TLIPOCA.title": "打击",
 
-    "LIZEROS-DEFEND_TLIPOCA.description": "",
+    "LIZEROS-DEFEND_TLIPOCA.description": "获得{Block:diff()}点[gold]格挡[/gold]。",
     "LIZEROS-DEFEND_TLIPOCA.title": "防御",
 
-    "LIZEROS-SOUL_STRIKE.description": "造成{Damage:diff()}点伤害。\n消耗{Soul:diff()}点灵魂对所有敌人释放。",
+    "LIZEROS-SOUL_STRIKE.description": "造成{Damage:diff()}点伤害。\n消耗{Soul:diff()}点[gold]灵魂[/gold]对[gold]所有敌人[/gold]释放。",
     "LIZEROS-SOUL_STRIKE.title": "灵魂打击",
 
-    "LIZEROS-EXTRACT_SOUL.description": "收获{CalculatedSoul:diff()}点灵魂。",
-    "LIZEROS-EXTRACT_SOUL.title": "提取灵魂",
+    "LIZEROS-ABSORB_SOUL.description": "[gold]汲取[/gold]{CalculatedSoul:diff()}点[gold]灵魂[/gold]。",
+    "LIZEROS-ABSORB_SOUL.title": "汲取灵魂",
 
-    "LIZEROS-SOUL_SHIELD.description": "消耗{Soul:diff()}点灵魂。\n获得{Block:diff()}点格挡。",
+    "LIZEROS-SOUL_SHIELD.description": "消耗{Soul:diff()}点[gold]灵魂[/gold]。\n获得{Block:diff()}点[gold]格挡[/gold]。",
     "LIZEROS-SOUL_SHIELD.title": "灵魂护盾"
 }

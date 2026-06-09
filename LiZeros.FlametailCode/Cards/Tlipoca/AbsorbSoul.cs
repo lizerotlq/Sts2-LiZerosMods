@@ -5,14 +5,21 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.ValueProps;
 
 namespace LiZeros.FlametailCode.Cards.Tlipoca
 {
-    public class ExtractSoul() : BasicTlipocaCard(2, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
+    public class AbsorbSoul() : BasicTlipocaCard(2, CardType.Skill, CardRarity.Uncommon, TargetType.AnyEnemy)
     {
+        protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+        [
+            Core.HoverTips.HoverTipFactory.Static(Core.HoverTips.StaticHoverTip.Soul),
+            Core.HoverTips.HoverTipFactory.Static(Core.HoverTips.StaticHoverTip.Absorb)
+        ];
+
         private static decimal CalculateSoulAmount(CardModel card, Creature? creature)
         {
             decimal baseValue = card.DynamicVars.CalculationBase.BaseValue;
@@ -41,7 +48,7 @@ namespace LiZeros.FlametailCode.Cards.Tlipoca
 
         protected override void OnUpgrade()
         {
-            DynamicVars.GetSoul().UpgradeValueBy(5);
+            DynamicVars.CalculationBase.UpgradeValueBy(5);
         }
     }
 }
