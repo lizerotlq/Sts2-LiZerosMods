@@ -1,6 +1,10 @@
 {
     "LIZEROS-SOUL.description": "[gold]屠杀[/gold]时[gold]收获[/gold]部分灵魂。",
     "LIZEROS-SOUL.title": "灵魂",
+
     "LIZEROS-ABSORB.description": "减少目标生命值，[gold]收获[/gold]等量[gold]灵魂[/gold]。",
-    "LIZEROS-ABSORB.title": "汲取"
+    "LIZEROS-ABSORB.title": "汲取",
+
+    "LIZEROS-LITTLE_DEATH.description": "每个小死神继承特莉波卡当前[gold]30％[/gold]生命值。",
+    "LIZEROS-LITTLE_DEATH.title": "小死神"
 }

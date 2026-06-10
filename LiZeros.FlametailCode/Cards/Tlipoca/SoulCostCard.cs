@@ -42,8 +42,13 @@ namespace LiZeros.FlametailCode.Cards.Tlipoca
 
         protected virtual bool VerifySoulStoneRelic([NotNullWhen(true)] out SoulRelic? relic)
         {
-            relic = Owner.GetRelic<SoulRelic>();
-            return relic != null;
+            if (IsMutable)
+            {
+                relic = Owner.GetRelic<SoulRelic>();
+                return relic != null;
+            }
+            relic = null;
+            return false;
         }
 
         protected virtual bool VerifySoulEnough(SoulRelic relic)

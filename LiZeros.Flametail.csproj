@@ -62,7 +62,6 @@
 		</Reference>
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="LiZeros.FlametailCode\Powers\Tlipoca\" />
 	  <Folder Include="LiZeros.FlametailCode\Core\Utils\" />
 	</ItemGroup>
 </Project>

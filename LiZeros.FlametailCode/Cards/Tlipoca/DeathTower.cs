@@ -1,26 +1,25 @@
-using BaseLib.Utils;
 using LiZeros.FlametailCode.Expansions;
+using LiZeros.FlametailCode.Powers.Tlipoca;
 using LiZeros.FlametailCode.Vars;
+using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
-using MegaCrit.Sts2.Core.ValueProps;
 
 namespace LiZeros.FlametailCode.Cards.Tlipoca
 {
-    public class SoulShield() : SoulCostCard(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public class DeathTower() : SoulCostCard(3, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
             Core.HoverTips.HoverTipFactory.Static(Core.HoverTips.StaticHoverTip.Soul),
-            Core.HoverTips.HoverTipFactory.Static(Core.HoverTips.StaticHoverTip.Absorb)
+            HoverTipFactory.FromPower<DeathTowerPower>()
         ];
 
         protected override IEnumerable<DynamicVar> CanonicalVars =>
         [
-            new SoulVar(5),
-            new BlockVar(20, ValueProp.Move)
+            new SoulVar(100)
         ];
 
         protected override bool RequiredSoul => true;
@@ -29,12 +28,13 @@ namespace LiZeros.FlametailCode.Cards.Tlipoca
 
         protected override Task OnPlayWithSoul(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            return CommonActions.CardBlock(this, cardPlay);
+            return PowerCmd.Apply<DeathTowerPower>(Owner.Creature, 1, Owner.Creature, this);
         }
 
         protected override void OnUpgrade()
         {
-            DynamicVars.Block.UpgradeValueBy(10);
+            EnergyCost.UpgradeBy(-1);
+            AddKeyword(CardKeyword.Innate);
         }
     }
 }
