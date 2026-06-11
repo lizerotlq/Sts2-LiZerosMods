@@ -2,7 +2,7 @@
     "LIZEROS-STRIKE_FLAMETAIL.description": "造成{Damage:diff()}点伤害。",
     "LIZEROS-STRIKE_FLAMETAIL.title": "打击",
 
-    "LIZEROS-DEFEND_FLAMETAIL.description": "获得{Block:diff()}点[gold]招架[/gold]。",
+    "LIZEROS-DEFEND_FLAMETAIL.description": "获得{Defend:diff()}点[gold]招架[/gold]。",
     "LIZEROS-DEFEND_FLAMETAIL.title": "招架",
 
     "LIZEROS-FORWARD_SWORDSMANSHIP.description": "",
@@ -22,18 +22,27 @@
     "LIZEROS-DEFEND_TLIPOCA.description": "获得{Block:diff()}点[gold]格挡[/gold]。",
     "LIZEROS-DEFEND_TLIPOCA.title": "防御",
 
-    "LIZEROS-SOUL_STRIKE.description": "造成{Damage:diff()}点伤害。\n消耗{Soul:diff()}点[gold]灵魂[/gold]对[gold]所有敌人[/gold]释放。",
+    "LIZEROS-SOUL_STRIKE.description": "造成{Damage:diff()}点伤害。\n[gold]灵魂[/gold]{Soul:diff()}:\n对[gold]所有敌人[/gold]释放。",
     "LIZEROS-SOUL_STRIKE.title": "灵魂打击",
 
     "LIZEROS-ABSORB_SOUL.description": "[gold]汲取[/gold]{CalculatedSoul:diff()}点[gold]灵魂[/gold]。",
     "LIZEROS-ABSORB_SOUL.title": "汲取灵魂",
 
-    "LIZEROS-SOUL_SHIELD.description": "消耗{Soul:diff()}点[gold]灵魂[/gold]。\n获得{Block:diff()}点[gold]格挡[/gold]。",
+    "LIZEROS-SOUL_SHIELD.description": "[gold]灵魂[/gold]{Soul:diff()}:\n获得{Block:diff()}点[gold]格挡[/gold]。",
     "LIZEROS-SOUL_SHIELD.title": "灵魂护盾",
 
-    "LIZEROS-DEATH_TOWER.description": "消耗{Soul:diff()}点[gold]灵魂[/gold]。\n将所有生物拉进[gold]死神塔领域[/gold]。",
+    "LIZEROS-DEATH_TOWER.description": "[gold]灵魂[/gold]{Soul:diff()}:\n将所有生物拉进[gold]死神塔领域[/gold]。\n将1张[red]献祭[/red]加入你的[gold]手牌[/gold]。",
     "LIZEROS-DEATH_TOWER.title": "死神塔",
 
     "LIZEROS-I_SUMMON.description": "召唤{CalculatedCount:diff()}个[gold]小死神[/gold]。",
-    "LIZEROS-I_SUMMON.title": "我召唤"
+    "LIZEROS-I_SUMMON.title": "我召唤",
+
+    "LIZEROS-CUTTING.description": "造成{Damage:diff()}点伤害。\n扣除目标最大生命值上限{LoseMaxHpRatio:diff()}％({CalculatedLoseMaxHp:diff()})。\n获得造成伤害和扣除最大生命值的[gold]灵魂[/gold]。\n[red]死神塔[/red]。{InDeathTower:cond:>0?\n这张牌可以被免费打出。|}",
+    "LIZEROS-CUTTING.title": "切割",
+
+    "LIZEROS-CLOAK.description": "获得{Block:diff()}点[gold]格挡[/gold]。\n获得[gold]斗篷{InDeathTower:cond:>0?+|}[/gold]。\n[red]死神塔[/red]。",
+    "LIZEROS-CLOAK.title": "斗篷",
+
+    "LIZEROS-SACRIFICE.description": "失去{HpLoss:diff()}%当前生命值。\n自我眩晕{SacrificePower:diff()}回合。\n{SacrificePower:diff()}回合结束后，特莉波卡永久进入[red]夜之主[/red]状态。",
+    "LIZEROS-SACRIFICE.title": "献祭"
 }

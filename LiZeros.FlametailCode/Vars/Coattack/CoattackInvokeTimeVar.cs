@@ -1,6 +1,6 @@
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
-namespace LiZeros.FlametailCode.Vars
+namespace LiZeros.FlametailCode.Vars.Coattack
 {
     public class CoattackInvokeTimeVar : DynamicVar
     {

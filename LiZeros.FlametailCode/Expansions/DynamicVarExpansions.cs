@@ -1,5 +1,8 @@
 using LiZeros.FlametailCode.Vars;
+using LiZeros.FlametailCode.Vars.Coattack;
+using LiZeros.FlametailCode.Vars.InDeathTower;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 
 namespace LiZeros.FlametailCode.Expansions
 {
@@ -43,6 +46,25 @@ namespace LiZeros.FlametailCode.Expansions
         public static CalculatedSoulVar GetCalculatedSoul(this DynamicVarSet set)
         {
             return (CalculatedSoulVar)set[CalculatedSoulVar.NAME];
+        }
+
+        public static InDeathTowerVar GetInDeathTower(this DynamicVarSet set)
+        {
+            return (InDeathTowerVar)set[InDeathTowerVar.NAME];
+        }
+
+        public static decimal GetAmount<T>(this PowerVar<T> powerVar) where T : PowerModel
+        {
+            if (powerVar is PowerInDeathTowerVar<T> powerInDeathTowerVar)
+                return powerInDeathTowerVar.GetAmount();
+            return powerVar.BaseValue;
+        }
+
+        public static decimal GetAmount(this DynamicVar dynamicVar)
+        {
+            if (dynamicVar is DynamicInDeathTowerVar dynamicInDeathTower)
+                return dynamicInDeathTower.GetAmount();
+            return dynamicVar.BaseValue;
         }
     }
 }

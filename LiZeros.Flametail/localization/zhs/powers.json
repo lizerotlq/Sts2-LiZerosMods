@@ -15,7 +15,28 @@
     "LIZEROS-ENCOURAGE_POWER.smartDescription": "下回合开始时，额外抽{Amount}张卡，并获得{Amount:energyIcons()}。",
     "LIZEROS-ENCOURAGE_POWER.title": "振奋",
 
-    "LIZEROS-DEATH_TOWER_POWER.description": "将所有生物拉进死神塔领域。\n在场地内每回合获得1点[gold]力量[/gold]和1点[gold]能量[/gold]。\n有25％概率[gold]闪避[/gold]受到的伤害。",
-    "LIZEROS-DEATH_TOWER_POWER.smartDescription": "将所有生物拉进死神塔领域。\n在场地内每回合获得{StrengthPower:diff()}点[gold]力量[/gold]和{Energy:energyIcons()}。\n有25％概率[gold]闪避[/gold]受到的伤害。",
-    "LIZEROS-DEATH_TOWER_POWER.title": "死神塔"
+
+    "LIZEROS-DEATH_TOWER_POWER.description": "将所有生物拉进死神塔领域。特莉波卡在死神塔领域内，每回合获得1点[gold]力量[/gold]和1点[gold]能量[/gold]。有25％概率[gold]闪避[/gold]受到的伤害。",
+    "LIZEROS-DEATH_TOWER_POWER.smartDescription": "将所有生物拉进死神塔领域。特莉波卡在死神塔领域内，每回合获得{StrengthPower:diff()}点[gold]力量[/gold]和{Energy:energyIcons()}。有25％概率[gold]闪避[/gold]受到的伤害。",
+    "LIZEROS-DEATH_TOWER_POWER.title": "死神塔",
+
+    "LIZEROS-CLOAK_POWER.description": "无视小于等于10的伤害，获得20％伤害减免。造成伤害的怪物获得2点[gold]虚弱[/gold]。",
+    "LIZEROS-CLOAK_POWER.smartDescription": "无视小于等于{ReduceInjury:diff()}的伤害，获得{ReduceDamage:diff()}％伤害减免。造成伤害的怪物获得{WeakPower:diff()}点[gold]虚弱[/gold]。",
+    "LIZEROS-CLOAK_POWER.title": "斗篷",
+
+    "LIZEROS-CLOAK_PLUS_POWER.description": "无视小于等于18的伤害，获得50％伤害减免。造成伤害的怪物获得5点[gold]虚弱[/gold]和2点[gold]易伤[/gold]。",
+    "LIZEROS-CLOAK_PLUS_POWER.smartDescription": "无视小于等于{ReduceInjury:diff()}的伤害，获得{ReduceDamage:diff()}％伤害减免。造成伤害的怪物获得{WeakPower:diff()}点[gold]虚弱[/gold]和{VulnerablePower:diff()}点[gold]易伤[/gold]。",
+    "LIZEROS-CLOAK_PLUS_POWER.title": "斗篷+",
+
+    "LIZEROS-SACRIFICE_POWER.description": "自我[gold]眩晕[/gold]5回合。5回合结束后，特莉波卡永久进入[red]夜之主[/red]状态。",
+    "LIZEROS-SACRIFICE_POWER.smartDescription": "自我[gold]眩晕[/gold]{Amount}回合。{Amount}回合结束后，特莉波卡永久进入[red]夜之主[/red]状态。",
+    "LIZEROS-SACRIFICE_POWER.title": "献祭",
+
+    "LIZEROS-GAIN_NIGHT_LORD_POWER.description": "下回合开始时，特莉波卡永久进入[red]夜之主[/red]状态。",
+    "LIZEROS-GAIN_NIGHT_LORD_POWER.smartDescription": "下回合开始时，特莉波卡永久进入[red]夜之主[/red]状态。",
+    "LIZEROS-GAIN_NIGHT_LORD_POWER.title": "\"夜之主\"",
+
+    "LIZEROS-NIGHT_LORD_POWER.description": "[red]夜之主[/red]",
+    "LIZEROS-NIGHT_LORD_POWER.smartDescription": "[red]夜之主[/red]",
+    "LIZEROS-NIGHT_LORD_POWER.title": "夜之主"
 }

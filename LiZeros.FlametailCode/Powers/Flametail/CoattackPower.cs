@@ -1,5 +1,5 @@
 using LiZeros.FlametailCode.Expansions;
-using LiZeros.FlametailCode.Vars;
+using LiZeros.FlametailCode.Vars.Coattack;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;

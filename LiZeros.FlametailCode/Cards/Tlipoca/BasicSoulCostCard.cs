@@ -11,7 +11,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace LiZeros.FlametailCode.Cards.Tlipoca
 {
-    public abstract class SoulCostCard(int baseCost, CardType type, CardRarity rarity, TargetType target, bool showInCardLibrary = true, bool autoAdd = true)
+    public abstract class BasicSoulCostCard(int baseCost, CardType type, CardRarity rarity, TargetType target, bool showInCardLibrary = true, bool autoAdd = true)
         : BasicTlipocaCard(baseCost, type, rarity, target, showInCardLibrary, autoAdd), ISoulModel
     {
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>

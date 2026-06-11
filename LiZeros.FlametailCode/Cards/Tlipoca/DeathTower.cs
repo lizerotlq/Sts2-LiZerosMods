@@ -9,12 +9,13 @@ using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
 namespace LiZeros.FlametailCode.Cards.Tlipoca
 {
-    public class DeathTower() : SoulCostCard(3, CardType.Power, CardRarity.Rare, TargetType.Self)
+    public class DeathTower() : BasicSoulCostCard(3, CardType.Power, CardRarity.Rare, TargetType.Self)
     {
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
-            Core.HoverTips.HoverTipFactory.Static(Core.HoverTips.StaticHoverTip.Soul),
-            HoverTipFactory.FromPower<DeathTowerPower>()
+            .. base.ExtraHoverTips,
+            HoverTipFactory.FromPower<DeathTowerPower>(),
+            HoverTipFactory.FromCard<Sacrifice>()
         ];
 
         protected override IEnumerable<DynamicVar> CanonicalVars =>
@@ -26,9 +27,13 @@ namespace LiZeros.FlametailCode.Cards.Tlipoca
 
         protected override decimal SoulCost => DynamicVars.GetSoul().BaseValue;
 
-        protected override Task OnPlayWithSoul(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        protected override async Task OnPlayWithSoul(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            return PowerCmd.Apply<DeathTowerPower>(Owner.Creature, 1, Owner.Creature, this);
+            if (CombatState != null)
+            {
+                await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Sacrifice>(Owner), PileType.Hand, addedByPlayer: true);
+                await PowerCmd.Apply<DeathTowerPower>(Owner.Creature, 1, Owner.Creature, this);
+            }
         }
 
         protected override void OnUpgrade()

@@ -40,7 +40,7 @@ namespace LiZeros.FlametailCode.Cards.Tlipoca
             Creature? target = cardPlay.Target;
             if (target != null)
             {
-                IEnumerable<DamageResult> results = await CreatureCmd.Damage(choiceContext, target, DynamicVars.GetCalculatedSoul().BaseValue, ValueProp.Unblockable, Owner.Creature, this);
+                IEnumerable<DamageResult> results = await CreatureCmd.Damage(choiceContext, target, DynamicVars.GetCalculatedSoul().Calculate(target), ValueProp.Unblockable, Owner.Creature, this);
                 decimal soul = results.Sum(r => r.UnblockedDamage);
                 await SoulCmd.GainSoul(Owner.Creature, soul, cardPlay);
             }

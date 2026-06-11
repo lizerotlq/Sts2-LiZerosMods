@@ -9,12 +9,11 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace LiZeros.FlametailCode.Cards.Tlipoca
 {
-    public class SoulShield() : SoulCostCard(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
+    public class SoulShield() : BasicSoulCostCard(2, CardType.Skill, CardRarity.Uncommon, TargetType.Self)
     {
         protected override IEnumerable<IHoverTip> ExtraHoverTips =>
         [
-            Core.HoverTips.HoverTipFactory.Static(Core.HoverTips.StaticHoverTip.Soul),
-            Core.HoverTips.HoverTipFactory.Static(Core.HoverTips.StaticHoverTip.Absorb)
+            .. base.ExtraHoverTips
         ];
 
         protected override IEnumerable<DynamicVar> CanonicalVars =>
