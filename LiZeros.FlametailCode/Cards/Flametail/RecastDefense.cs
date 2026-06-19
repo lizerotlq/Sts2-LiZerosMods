@@ -33,8 +33,8 @@ namespace LiZeros.FlametailCode.Cards.Flametail
             int cardsCount = cards.Count();
             await CardCmd.Discard(choiceContext, cards);
             for (int i = 0; i < cardsCount; i++)
-                await LzmCmd.Defend(this, Owner.Creature, cardPlay);
-            await LzmCmd.Encourage(this, Owner.Creature, cardPlay);
+                await LzmCmd.Defend(choiceContext, this, Owner.Creature, cardPlay);
+            await LzmCmd.Encourage(choiceContext, this, Owner.Creature, cardPlay);
         }
 
         protected override void OnUpgrade()

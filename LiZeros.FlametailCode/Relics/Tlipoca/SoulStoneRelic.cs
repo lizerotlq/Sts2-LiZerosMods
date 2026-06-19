@@ -1,6 +1,5 @@
 using LiZeros.FlametailCode.Expansions;
 using LiZeros.FlametailCode.Vars;
-using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -27,7 +26,7 @@ namespace LiZeros.FlametailCode.Relics.Tlipoca
             return RelicCmd.Replace(this, nightStone);
         }
 
-        public override Task AfterSoulGained(CombatState combatState, Creature creature, decimal amount, Creature? cardSource)
+        public override Task AfterSoulGained(Creature creature, decimal amount, Creature? cardSource)
         {
             if (Soul > UpgradeRequiredSouls)
                 return Upgrade();

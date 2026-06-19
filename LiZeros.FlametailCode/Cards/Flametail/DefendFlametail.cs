@@ -18,7 +18,7 @@ namespace LiZeros.FlametailCode.Cards.Flametail
 
         protected override Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            return PowerCmd.Apply<DefendPower>(Owner.Creature, DynamicVars.GetDefend().BaseValue, Owner.Creature, this);
+            return PowerCmd.Apply<DefendPower>(choiceContext, Owner.Creature, DynamicVars.GetDefend().BaseValue, Owner.Creature, this);
         }
 
         protected override void OnUpgrade()

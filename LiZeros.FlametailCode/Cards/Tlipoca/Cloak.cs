@@ -24,10 +24,16 @@ namespace LiZeros.FlametailCode.Cards.Tlipoca
             HoverTipFactory.FromPower<CloakPower>(),
         ];
 
-        protected override async Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        protected override async Task OnPlayWithDeathTower(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
             await CommonActions.CardBlock(this, cardPlay);
-            await PowerCmd.Apply<CloakPower>(Owner.Creature, 1, Owner.Creature, this);
+            await PowerCmd.Apply<CloakPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
+        }
+
+        protected override async Task OnPlayWithoutDeathTower(PlayerChoiceContext choiceContext, CardPlay cardPlay)
+        {
+            await CommonActions.CardBlock(this, cardPlay);
+            await PowerCmd.Apply<CloakPlusPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
         }
 
         protected override void OnUpgrade()

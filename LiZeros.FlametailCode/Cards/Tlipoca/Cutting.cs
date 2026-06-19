@@ -69,7 +69,7 @@ namespace LiZeros.FlametailCode.Cards.Tlipoca
             await CreatureCmd.LoseMaxHp(choiceContext, cardPlay.Target, loseMaxHp, true);
 
             // 获得灵魂
-            decimal soul = command.Results.Sum(r => r.UnblockedDamage) + loseMaxHp;
+            decimal soul = command.Results.SelectMany(r => r).Sum(r => r.UnblockedDamage) + loseMaxHp;
             await SoulCmd.GainSoul(Owner.Creature, soul, cardPlay);
         }
 

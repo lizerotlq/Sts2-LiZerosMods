@@ -24,7 +24,7 @@ namespace LiZeros.FlametailCode.Powers.Tlipoca
 
             // 下一回合获得夜之主
             if (Amount == 0)
-                await PowerCmd.Apply<GainNightLordPower>(player.Creature, 1, player.Creature, null);
+                await PowerCmd.Apply<GainNightLordPower>(choiceContext, player.Creature, 1, player.Creature, null);
         }
     }
 }

@@ -2,6 +2,7 @@ using LiZeros.FlametailCode.Powers.Flametail;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 
@@ -47,8 +48,9 @@ namespace LiZeros.FlametailCode.Relics.Flametail
 
         public override async Task BeforeCombatStart()
         {
-            await PowerCmd.Apply<DefendPower>(Owner.Creature, 1, null, null);
-            await PowerCmd.Apply<CoattackPower>(Owner.Creature, 1, null, null);
+            BlockingPlayerChoiceContext context = new BlockingPlayerChoiceContext();
+            await PowerCmd.Apply<DefendPower>(context, Owner.Creature, 1, null, null);
+            await PowerCmd.Apply<CoattackPower>(context, Owner.Creature, 1, null, null);
         }
     }
 }

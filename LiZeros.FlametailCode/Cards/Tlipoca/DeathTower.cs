@@ -31,8 +31,8 @@ namespace LiZeros.FlametailCode.Cards.Tlipoca
         {
             if (CombatState != null)
             {
-                await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Sacrifice>(Owner), PileType.Hand, addedByPlayer: true);
-                await PowerCmd.Apply<DeathTowerPower>(Owner.Creature, 1, Owner.Creature, this);
+                await CardPileCmd.AddGeneratedCardToCombat(CombatState.CreateCard<Sacrifice>(Owner), PileType.Hand, Owner);
+                await PowerCmd.Apply<DeathTowerPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
             }
         }
 

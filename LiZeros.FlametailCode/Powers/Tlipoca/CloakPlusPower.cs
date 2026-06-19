@@ -46,17 +46,23 @@ namespace LiZeros.FlametailCode.Powers.Tlipoca
         {
             if (_dealer != null)
             {
-                await PowerCmd.Apply<WeakPower>(_dealer, DynamicVars.Weak.BaseValue, Owner, null);
-                await PowerCmd.Apply<VulnerablePower>(_dealer, DynamicVars.Vulnerable.BaseValue, Owner, null);
+                BlockingPlayerChoiceContext context = new BlockingPlayerChoiceContext();
+                await PowerCmd.Apply<WeakPower>(context, _dealer, DynamicVars.Weak.BaseValue, Owner, null);
+                await PowerCmd.Apply<VulnerablePower>(context, _dealer, DynamicVars.Vulnerable.BaseValue, Owner, null);
                 _dealer = null;
             }
         }
 
-        public override decimal ModifyPowerAmountGiven(PowerModel power, Creature giver, decimal amount, Creature? target, CardModel? cardSource)
+        public override bool TryModifyPowerAmountReceived(PowerModel canonicalPower, Creature target, decimal amount, Creature? applier, out decimal modifiedAmount)
         {
-            if (power is CloakPower && power.Owner == Owner)
-                return 0;
-            return amount;
+            if (canonicalPower is ClarityPower && target == Owner)
+            {
+                modifiedAmount = 0;
+                return true;
+            }
+
+            modifiedAmount = amount;
+            return false;
         }
 
         public override Task AfterApplied(Creature? applier, CardModel? cardSource)
@@ -66,7 +72,7 @@ namespace LiZeros.FlametailCode.Powers.Tlipoca
             return Task.CompletedTask;
         }
 
-        public override Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+        public override Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
             if (side == CombatSide.Enemy)
                 return PowerCmd.Remove(this);

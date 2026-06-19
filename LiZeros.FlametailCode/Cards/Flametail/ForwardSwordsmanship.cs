@@ -9,7 +9,7 @@ namespace LiZeros.FlametailCode.Cards.Flametail
     {
         protected override Task OnPlay(PlayerChoiceContext choiceContext, CardPlay cardPlay)
         {
-            return PowerCmd.Apply<ForwardSwordsmanshipPower>(Owner.Creature, 1, Owner.Creature, this);
+            return PowerCmd.Apply<ForwardSwordsmanshipPower>(choiceContext, Owner.Creature, 1, Owner.Creature, this);
         }
 
         protected override void OnUpgrade()

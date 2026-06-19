@@ -12,7 +12,7 @@ namespace LiZeros.FlametailCode.Powers.Tlipoca
 
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
-            await PowerCmd.Apply<NightLordPower>(Owner, 1, Owner, null);
+            await PowerCmd.Apply<NightLordPower>(choiceContext, Owner, 1, Owner, null);
             await PowerCmd.Remove(this);
         }
     }

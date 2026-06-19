@@ -44,7 +44,7 @@ namespace LiZeros.FlametailCode.Cards.Tlipoca
             await CreatureCmd.Damage(choiceContext, Owner.Creature, loseHp, ValueProp.Unblockable, this);
 
             // 献祭
-            await PowerCmd.Apply<SacrificePower>(Owner.Creature, DynamicVars.Power<SacrificePower>().BaseValue, Owner.Creature, this);
+            await PowerCmd.Apply<SacrificePower>(choiceContext, Owner.Creature, DynamicVars.Power<SacrificePower>().BaseValue, Owner.Creature, this);
 
             // 结束当前回合。
             PlayerCmd.EndTurn(Owner, canBackOut: false);

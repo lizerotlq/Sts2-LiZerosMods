@@ -34,28 +34,8 @@ namespace LiZeros.FlametailCode.Powers.Tlipoca
 
         public override async Task AfterPlayerTurnStart(PlayerChoiceContext choiceContext, Player player)
         {
-            // 每回合消耗灵魂的削弱
-            /*SoulRelic? soulRelic = player.GetRelic<SoulRelic>();
-            if (soulRelic == null)
-            {
-                RemoveInternal();
-                return;
-            }
-
-            int soul = soulRelic.Soul;
-            int soulNeed = DynamicVars.GetSoul().IntValue;
-
-            if (soulNeed < soul)
-            {
-                RemoveInternal();
-                return;
-            }
-
-            // 失去灵魂
-            await SoulCmd.LoseSoul(Owner, soulNeed, null);*/
-
             // 获取力量
-            await PowerCmd.Apply<StrengthPower>(Owner, DynamicVars.Strength.BaseValue, Owner, null);
+            await PowerCmd.Apply<StrengthPower>(choiceContext, Owner, DynamicVars.Strength.BaseValue, Owner, null);
 
             // 获得费用
             await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, player);
@@ -67,7 +47,7 @@ namespace LiZeros.FlametailCode.Powers.Tlipoca
             return Task.CompletedTask;
         }
 
-        public override Task AfterAttack(AttackCommand command)
+        public override Task AfterAttack(PlayerChoiceContext choiceContext, AttackCommand command)
         {
             IsPreviewMode = true;
             return Task.CompletedTask;

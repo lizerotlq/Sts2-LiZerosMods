@@ -46,8 +46,9 @@ namespace LiZeros.FlametailCode.Powers.Tlipoca
         {
             if (_dealer != null)
             {
-                await PowerCmd.Apply<WeakPower>(_dealer, DynamicVars.Weak.BaseValue, Owner, null);
-                await PowerCmd.Apply<VulnerablePower>(_dealer, DynamicVars.Vulnerable.BaseValue, Owner, null);
+                BlockingPlayerChoiceContext context = new BlockingPlayerChoiceContext();
+                await PowerCmd.Apply<WeakPower>(context, _dealer, DynamicVars.Weak.BaseValue, Owner, null);
+                await PowerCmd.Apply<VulnerablePower>(context, _dealer, DynamicVars.Vulnerable.BaseValue, Owner, null);
                 _dealer = null;
             }
         }
@@ -59,7 +60,7 @@ namespace LiZeros.FlametailCode.Powers.Tlipoca
             return Task.CompletedTask;
         }
 
-        public override Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
+        public override Task AfterSideTurnEnd(PlayerChoiceContext choiceContext, CombatSide side, IEnumerable<Creature> participants)
         {
             if (side == CombatSide.Enemy)
                 return PowerCmd.Remove(this);

@@ -16,7 +16,7 @@ namespace LiZeros.FlametailCode.Core.Commands
                 creature.Player.GetRelic<SoulRelic>() is not SoulRelic relic)
                 return default;
 
-            CombatState combatState = creature.CombatState!;
+            ICombatState combatState = creature.CombatState!;
             decimal modifiedAmount = amount;
 
             await SoulHook.BeforeSoulGained(combatState, creature, amount, cardPlay?.Card.Owner.Creature);
@@ -39,7 +39,7 @@ namespace LiZeros.FlametailCode.Core.Commands
                 creature.Player.GetRelic<SoulRelic>() is not SoulRelic relic)
                 return default;
 
-            CombatState combatState = creature.CombatState!;
+            ICombatState combatState = creature.CombatState!;
             decimal modifiedAmount = amount;
 
             await SoulHook.BeforeSoulLost(combatState, creature, amount, cardPlay?.Card.Owner.Creature);
