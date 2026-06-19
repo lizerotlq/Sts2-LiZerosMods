@@ -49,8 +49,8 @@ namespace LiZeros.FlametailCode.Relics.Flametail
         public override async Task BeforeCombatStart()
         {
             BlockingPlayerChoiceContext context = new BlockingPlayerChoiceContext();
-            await PowerCmd.Apply<DefendPower>(context, Owner.Creature, 1, null, null);
-            await PowerCmd.Apply<CoattackPower>(context, Owner.Creature, 1, null, null);
+            await PowerCmd.Apply<DefendPower>(context, Owner.Creature, 1, Owner.Creature, null);
+            await PowerCmd.Apply<CoattackPower>(context, Owner.Creature, 1, Owner.Creature, null);
         }
     }
 }

@@ -1,3 +1,4 @@
+using LiZeros.FlametailCode.Powers.Common;
 using LiZeros.FlametailCode.Vars;
 using LiZeros.FlametailCode.Vars.Coattack;
 using LiZeros.FlametailCode.Vars.InDeathTower;
@@ -11,6 +12,11 @@ namespace LiZeros.FlametailCode.Expansions
         public static DefendVar GetDefend(this DynamicVarSet set)
         {
             return (DefendVar)set[DefendVar.NAME];
+        }
+
+        public static PowerVar<EncouragePower> GetEncourage(this DynamicVarSet set)
+        {
+            return (PowerVar<EncouragePower>)set[nameof(EncouragePower)];
         }
 
         public static CoattackAmountVar GetCoattackAmount(this DynamicVarSet set)
@@ -31,11 +37,6 @@ namespace LiZeros.FlametailCode.Expansions
         public static CoattackInvokeTimeVar GetCoattackInvokeTime(this DynamicVarSet set)
         {
             return (CoattackInvokeTimeVar)set[CoattackInvokeTimeVar.NAME];
-        }
-
-        public static EncourageVar GetEncourage(this DynamicVarSet set)
-        {
-            return (EncourageVar)set[EncourageVar.NAME];
         }
 
         public static SoulVar GetSoul(this DynamicVarSet set)

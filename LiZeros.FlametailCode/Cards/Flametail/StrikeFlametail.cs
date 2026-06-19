@@ -6,6 +6,9 @@ using MegaCrit.Sts2.Core.ValueProps;
 
 namespace LiZeros.FlametailCode.Cards.Flametail
 {
+    /// <summary>
+    /// 打击：造成 4 点伤害，抽 1 张牌。
+    /// </summary>
     public class StrikeFlametail() : BasicFlametailCard(1, CardType.Attack, CardRarity.Basic, TargetType.AnyEnemy)
     {
         protected override HashSet<CardTag> CanonicalTags => [CardTag.Strike];
